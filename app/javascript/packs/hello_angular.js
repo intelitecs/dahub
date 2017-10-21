@@ -4,4 +4,5 @@
 //
 // <%= javascript_pack_tag 'hello_angular' %>
 
-require('../hello_angular')
+require('../hello_angular');
+console.log("loaded hello angular");

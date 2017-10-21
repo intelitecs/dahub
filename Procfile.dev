@@ -1,0 +1,8 @@
+# start rails server
+web: bundle exec rails s
+
+# webpack dev server
+webpacker: ./bin/webpack-dev-server
+
+# watcher
+./bin/webpack --colors --progress

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Etablissement Activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Etablissement</th>
+      <th>Activity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @etablissement_activities.each do |etablissement_activity| %>
+      <tr>
+        <td><%= etablissement_activity.etablissement %></td>
+        <td><%= etablissement_activity.activity %></td>
+        <td><%= link_to 'Show', etablissement_activity %></td>
+        <td><%= link_to 'Edit', edit_etablissement_activity_path(etablissement_activity) %></td>
+        <td><%= link_to 'Destroy', etablissement_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Etablissement Activity', new_etablissement_activity_path %>

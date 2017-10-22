@@ -1,0 +1,27 @@
+<%= form_with(model: juridic_form, local: true) do |form| %>
+  <% if juridic_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(juridic_form.errors.count, "error") %> prohibited this juridic_form from being saved:</h2>
+
+      <ul>
+      <% juridic_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :juridic_form_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :juridic_form_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,52 @@
+<%= form_with(model: contract, local: true) do |form| %>
+  <% if contract.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(contract.errors.count, "error") %> prohibited this contract from being saved:</h2>
+
+      <ul>
+      <% contract.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :contract_employee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id, id: :contract_company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_at %>
+    <%= form.datetime_select :start_at, id: :contract_start_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contract_type %>
+    <%= form.text_field :contract_type, id: :contract_contract_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_at %>
+    <%= form.datetime_select :end_at, id: :contract_end_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position, id: :contract_position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brute_month_salary %>
+    <%= form.text_field :brute_month_salary, id: :contract_brute_month_salary %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

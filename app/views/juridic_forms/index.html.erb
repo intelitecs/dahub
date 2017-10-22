@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Juridic Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @juridic_forms.each do |juridic_form| %>
+      <tr>
+        <td><%= juridic_form.name %></td>
+        <td><%= juridic_form.description %></td>
+        <td><%= link_to 'Show', juridic_form %></td>
+        <td><%= link_to 'Edit', edit_juridic_form_path(juridic_form) %></td>
+        <td><%= link_to 'Destroy', juridic_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Juridic Form', new_juridic_form_path %>

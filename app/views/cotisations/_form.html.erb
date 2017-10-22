@@ -1,0 +1,47 @@
+<%= form_with(model: cotisation, local: true) do |form| %>
+  <% if cotisation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cotisation.errors.count, "error") %> prohibited this cotisation from being saved:</h2>
+
+      <ul>
+      <% cotisation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :periodStart %>
+    <%= form.datetime_select :periodStart, id: :cotisation_periodStart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :periodEnd %>
+    <%= form.datetime_select :periodEnd, id: :cotisation_periodEnd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :declaredAmount %>
+    <%= form.text_field :declaredAmount, id: :cotisation_declaredAmount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payedAmount %>
+    <%= form.text_field :payedAmount, id: :cotisation_payedAmount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id, id: :cotisation_company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :cotisation_employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

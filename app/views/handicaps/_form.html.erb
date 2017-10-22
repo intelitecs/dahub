@@ -1,0 +1,37 @@
+<%= form_with(model: handicap, local: true) do |form| %>
+  <% if handicap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(handicap.errors.count, "error") %> prohibited this handicap from being saved:</h2>
+
+      <ul>
+      <% handicap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :handicap_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :handicap_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cause %>
+    <%= form.text_field :cause, id: :handicap_cause %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :handicap_employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,82 @@
+<%= form_with(model: company, local: true) do |form| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cc %>
+    <%= form.text_field :cc, id: :company_cc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cnps %>
+    <%= form.text_field :cnps, id: :company_cnps %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_registry_document_id %>
+    <%= form.text_field :company_registry_document_id, id: :company_company_registry_document_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :company_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :socialReason %>
+    <%= form.text_field :socialReason, id: :company_socialReason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :form %>
+    <%= form.text_field :form, id: :company_form %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sigle %>
+    <%= form.text_field :sigle, id: :company_sigle %>
+  </div>
+
+  <div class="field">
+    <%= form.label :webSite %>
+    <%= form.text_field :webSite, id: :company_webSite %>
+  </div>
+
+  <div class="field">
+    <%= form.label :impotCenter %>
+    <%= form.text_field :impotCenter, id: :company_impotCenter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :impotRegime %>
+    <%= form.text_field :impotRegime, id: :company_impotRegime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acte_const_at %>
+    <%= form.datetime_select :acte_const_at, id: :company_acte_const_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :num_acte_const %>
+    <%= form.text_field :num_acte_const, id: :company_num_acte_const %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.text_field :country_id, id: :company_country_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

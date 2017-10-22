@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company_registry_document.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company_registry_document.description %>
+</p>
+
+<%= link_to 'Edit', edit_company_registry_document_path(@company_registry_document) %> |
+<%= link_to 'Back', company_registry_documents_path %>

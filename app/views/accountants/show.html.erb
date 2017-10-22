@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @accountant.lastname %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @accountant.firstname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @accountant.address %>
+</p>
+
+<p>
+  <strong>Employed:</strong>
+  <%= @accountant.employed %>
+</p>
+
+<%= link_to 'Edit', edit_accountant_path(@accountant) %> |
+<%= link_to 'Back', accountants_path %>

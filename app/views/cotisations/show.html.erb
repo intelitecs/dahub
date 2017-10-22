@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Periodstart:</strong>
+  <%= @cotisation.periodStart %>
+</p>
+
+<p>
+  <strong>Periodend:</strong>
+  <%= @cotisation.periodEnd %>
+</p>
+
+<p>
+  <strong>Declaredamount:</strong>
+  <%= @cotisation.declaredAmount %>
+</p>
+
+<p>
+  <strong>Payedamount:</strong>
+  <%= @cotisation.payedAmount %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @cotisation.company %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @cotisation.employee %>
+</p>
+
+<%= link_to 'Edit', edit_cotisation_path(@cotisation) %> |
+<%= link_to 'Back', cotisations_path %>

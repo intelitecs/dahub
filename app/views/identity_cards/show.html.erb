@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Matricule:</strong>
+  <%= @identity_card.matricule %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @identity_card.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @identity_card.end_at %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @identity_card.employee %>
+</p>
+
+<p>
+  <strong>Authority full name:</strong>
+  <%= @identity_card.authority_full_name %>
+</p>
+
+<p>
+  <strong>Authority title:</strong>
+  <%= @identity_card.authority_title %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @identity_card.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @identity_card.city %>
+</p>
+
+<%= link_to 'Edit', edit_identity_card_path(@identity_card) %> |
+<%= link_to 'Back', identity_cards_path %>

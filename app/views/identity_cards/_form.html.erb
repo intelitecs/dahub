@@ -1,0 +1,57 @@
+<%= form_with(model: identity_card, local: true) do |form| %>
+  <% if identity_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(identity_card.errors.count, "error") %> prohibited this identity_card from being saved:</h2>
+
+      <ul>
+      <% identity_card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :matricule %>
+    <%= form.text_field :matricule, id: :identity_card_matricule %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_at %>
+    <%= form.datetime_select :start_at, id: :identity_card_start_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_at %>
+    <%= form.datetime_select :end_at, id: :identity_card_end_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :identity_card_employee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :authority_full_name %>
+    <%= form.text_field :authority_full_name, id: :identity_card_authority_full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :authority_title %>
+    <%= form.text_field :authority_title, id: :identity_card_authority_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.text_field :country_id, id: :identity_card_country_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.text_field :city_id, id: :identity_card_city_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

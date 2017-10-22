@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Etablissement:</strong>
+  <%= @etablissement_activity.etablissement %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @etablissement_activity.activity %>
+</p>
+
+<%= link_to 'Edit', edit_etablissement_activity_path(@etablissement_activity) %> |
+<%= link_to 'Back', etablissement_activities_path %>

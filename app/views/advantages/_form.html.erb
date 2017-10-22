@@ -1,0 +1,37 @@
+<%= form_with(model: advantage, local: true) do |form| %>
+  <% if advantage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advantage.errors.count, "error") %> prohibited this advantage from being saved:</h2>
+
+      <ul>
+      <% advantage.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :advantage_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :advantage_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value, id: :advantage_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :advantage_employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

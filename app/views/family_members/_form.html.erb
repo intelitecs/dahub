@@ -1,0 +1,62 @@
+<%= form_with(model: family_member, local: true) do |form| %>
+  <% if family_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(family_member.errors.count, "error") %> prohibited this family_member from being saved:</h2>
+
+      <ul>
+      <% family_member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nature %>
+    <%= form.text_field :nature, id: :family_member_nature %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :family_member_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :family_member_firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.text_field :birthdate, id: :family_member_birthdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality, id: :family_member_nationality %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matrimonial_situation %>
+    <%= form.text_field :matrimonial_situation, id: :family_member_matrimonial_situation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employee_id %>
+    <%= form.text_field :employee_id, id: :family_member_employee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cnps %>
+    <%= form.text_field :cnps, id: :family_member_cnps %>
+  </div>
+
+  <div class="field">
+    <%= form.label :job %>
+    <%= form.text_field :job, id: :family_member_job %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

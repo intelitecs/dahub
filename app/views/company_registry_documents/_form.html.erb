@@ -1,0 +1,27 @@
+<%= form_with(model: company_registry_document, local: true) do |form| %>
+  <% if company_registry_document.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company_registry_document.errors.count, "error") %> prohibited this company_registry_document from being saved:</h2>
+
+      <ul>
+      <% company_registry_document.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :company_registry_document_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :company_registry_document_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

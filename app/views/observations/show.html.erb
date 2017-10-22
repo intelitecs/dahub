@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @observation.author %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @observation.description %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @observation.employee %>
+</p>
+
+<%= link_to 'Edit', edit_observation_path(@observation) %> |
+<%= link_to 'Back', observations_path %>

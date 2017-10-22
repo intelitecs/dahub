@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @handicap.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @handicap.description %>
+</p>
+
+<p>
+  <strong>Cause:</strong>
+  <%= @handicap.cause %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @handicap.employee %>
+</p>
+
+<%= link_to 'Edit', edit_handicap_path(@handicap) %> |
+<%= link_to 'Back', handicaps_path %>

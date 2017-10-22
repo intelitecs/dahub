@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Company Registry Documents</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company_registry_documents.each do |company_registry_document| %>
+      <tr>
+        <td><%= company_registry_document.name %></td>
+        <td><%= company_registry_document.description %></td>
+        <td><%= link_to 'Show', company_registry_document %></td>
+        <td><%= link_to 'Edit', edit_company_registry_document_path(company_registry_document) %></td>
+        <td><%= link_to 'Destroy', company_registry_document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company Registry Document', new_company_registry_document_path %>

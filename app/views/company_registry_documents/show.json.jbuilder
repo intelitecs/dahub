@@ -1,0 +1,1 @@
+json.partial! "company_registry_documents/company_registry_document", company_registry_document: @company_registry_document

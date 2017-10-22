@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Nature</th>
+      <th>Sector</th>
+      <th>Tauxat</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.code %></td>
+        <td><%= activity.nature %></td>
+        <td><%= activity.sector %></td>
+        <td><%= activity.tauxAt %></td>
+        <td><%= link_to 'Show', activity %></td>
+        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity', new_activity_path %>

@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Family Members</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nature</th>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Birthdate</th>
+      <th>Nationality</th>
+      <th>Matrimonial situation</th>
+      <th>Employee</th>
+      <th>Cnps</th>
+      <th>Job</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @family_members.each do |family_member| %>
+      <tr>
+        <td><%= family_member.nature %></td>
+        <td><%= family_member.lastname %></td>
+        <td><%= family_member.firstname %></td>
+        <td><%= family_member.birthdate %></td>
+        <td><%= family_member.nationality %></td>
+        <td><%= family_member.matrimonial_situation %></td>
+        <td><%= family_member.employee %></td>
+        <td><%= family_member.cnps %></td>
+        <td><%= family_member.job %></td>
+        <td><%= link_to 'Show', family_member %></td>
+        <td><%= link_to 'Edit', edit_family_member_path(family_member) %></td>
+        <td><%= link_to 'Destroy', family_member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Family Member', new_family_member_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @contract.employee %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @contract.company %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @contract.start_at %>
+</p>
+
+<p>
+  <strong>Contract type:</strong>
+  <%= @contract.contract_type %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @contract.end_at %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @contract.position %>
+</p>
+
+<p>
+  <strong>Brute month salary:</strong>
+  <%= @contract.brute_month_salary %>
+</p>
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

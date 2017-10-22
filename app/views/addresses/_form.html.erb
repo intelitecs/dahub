@@ -1,0 +1,92 @@
+<%= form_with(model: address, local: true) do |form| %>
+  <% if address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+      <% address.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :building %>
+    <%= form.text_field :building, id: :address_building %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cadasRef %>
+    <%= form.text_field :cadasRef, id: :address_cadasRef %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cieNum %>
+    <%= form.number_field :cieNum, id: :address_cieNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sodeciNum %>
+    <%= form.number_field :sodeciNum, id: :address_sodeciNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ilot %>
+    <%= form.text_field :ilot, id: :address_ilot %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lot %>
+    <%= form.text_field :lot, id: :address_lot %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street, id: :address_street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postCode %>
+    <%= form.number_field :postCode, id: :address_postCode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :quarter %>
+    <%= form.text_field :quarter, id: :address_quarter %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postAgenceNum %>
+    <%= form.number_field :postAgenceNum, id: :address_postAgenceNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :streetNum %>
+    <%= form.number_field :streetNum, id: :address_streetNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stageNum %>
+    <%= form.number_field :stageNum, id: :address_stageNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :doorNum %>
+    <%= form.number_field :doorNum, id: :address_doorNum %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.text_field :country_id, id: :address_country_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.text_field :city_id, id: :address_city_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,72 @@
+<%= form_with(model: employee, local: true) do |form| %>
+  <% if employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :matricule %>
+    <%= form.text_field :matricule, id: :employee_matricule %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cnps %>
+    <%= form.text_field :cnps, id: :employee_cnps %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expat %>
+    <%= form.text_field :expat, id: :employee_expat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :employee_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :employee_firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthdate %>
+    <%= form.datetime_select :birthdate, id: :employee_birthdate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sex %>
+    <%= form.text_field :sex, id: :employee_sex %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality, id: :employee_nationality %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hireAt %>
+    <%= form.datetime_select :hireAt, id: :employee_hireAt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_id %>
+    <%= form.text_field :company_id, id: :employee_company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :matrimonial_situation %>
+    <%= form.text_field :matrimonial_situation, id: :employee_matrimonial_situation %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

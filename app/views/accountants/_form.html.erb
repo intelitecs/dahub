@@ -1,0 +1,37 @@
+<%= form_with(model: accountant, local: true) do |form| %>
+  <% if accountant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(accountant.errors.count, "error") %> prohibited this accountant from being saved:</h2>
+
+      <ul>
+      <% accountant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname, id: :accountant_lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname, id: :accountant_firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address_id %>
+    <%= form.text_field :address_id, id: :accountant_address_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :employed %>
+    <%= form.check_box :employed, id: :accountant_employed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

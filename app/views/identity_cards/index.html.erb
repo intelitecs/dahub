@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Identity Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Matricule</th>
+      <th>Start at</th>
+      <th>End at</th>
+      <th>Employee</th>
+      <th>Authority full name</th>
+      <th>Authority title</th>
+      <th>Country</th>
+      <th>City</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @identity_cards.each do |identity_card| %>
+      <tr>
+        <td><%= identity_card.matricule %></td>
+        <td><%= identity_card.start_at %></td>
+        <td><%= identity_card.end_at %></td>
+        <td><%= identity_card.employee %></td>
+        <td><%= identity_card.authority_full_name %></td>
+        <td><%= identity_card.authority_title %></td>
+        <td><%= identity_card.country %></td>
+        <td><%= identity_card.city %></td>
+        <td><%= link_to 'Show', identity_card %></td>
+        <td><%= link_to 'Edit', edit_identity_card_path(identity_card) %></td>
+        <td><%= link_to 'Destroy', identity_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Identity Card', new_identity_card_path %>

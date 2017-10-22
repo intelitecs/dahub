@@ -1,0 +1,2 @@
+module JuridicFormsHelper
+end

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Account number:</strong>
+  <%= @bank_account.account_number %>
+</p>
+
+<p>
+  <strong>Bank code:</strong>
+  <%= @bank_account.bank_code %>
+</p>
+
+<p>
+  <strong>Agency code:</strong>
+  <%= @bank_account.agency_code %>
+</p>
+
+<p>
+  <strong>Iban code:</strong>
+  <%= @bank_account.iban_code %>
+</p>
+
+<p>
+  <strong>Rib code:</strong>
+  <%= @bank_account.rib_code %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @bank_account.owner %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @bank_account.company %>
+</p>
+
+<%= link_to 'Edit', edit_bank_account_path(@bank_account) %> |
+<%= link_to 'Back', bank_accounts_path %>

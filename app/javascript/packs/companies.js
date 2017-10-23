@@ -1,0 +1,1 @@
+require('../dahub/app/companies');

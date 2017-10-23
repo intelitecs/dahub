@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
+  after_action :createUser, only: [:create]
 
   # GET /employees
   # GET /employees.json
@@ -71,4 +72,8 @@ class EmployeesController < ApplicationController
     def employee_params
       params.require(:employee).permit(:matricule, :cnps, :expat, :lastname, :firstname, :birthdate, :sex, :nationality, :hireAt, :company_id, :matrimonial_situation)
     end
+
+  def createUser
+
+  end
 end

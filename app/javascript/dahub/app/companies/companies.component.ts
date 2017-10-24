@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 
+
 @Component({
     moduleId: 'companies-module',
     selector: 'app-companies',

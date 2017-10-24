@@ -7,6 +7,7 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+require('../../../node_modules/jquery/dist/jquery');
 require('../../../node_modules/bootstrap/dist/css/bootstrap.css');
 
 console.log('Hello World from Webpacker');

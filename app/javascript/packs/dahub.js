@@ -5,4 +5,6 @@
 // <%= javascript_pack_tag 'dahub' %>
 
 require('../dahub');
+require('../dahub/app/app.component.css');
+require('../../../node_modules/bootstrap/dist/css/bootstrap.css');
 console.log("loaded hello angular");

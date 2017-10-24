@@ -2,7 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {MatButtonModule, MatIconModule, MatSidenavModule, MatToolbarModule} from "@angular/material";
+import {
+    MatButtonModule, MatGridListModule, MatIconModule, MatListModule, MatSidenavModule,
+    MatToolbarModule
+} from "@angular/material";
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
@@ -10,7 +13,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
     AppComponent
   ],
   imports: [
-    BrowserModule, MatButtonModule, MatSidenavModule, MatIconModule,
+    BrowserModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule,
     BrowserAnimationsModule, NoopAnimationsModule, MatToolbarModule
   ],
   providers: [],

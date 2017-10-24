@@ -9,6 +9,11 @@
     "sourceMap": true,
     "target": "es5"
   },
+  "types":[
+    "hammerjs"
+  ]
+
+  ,
   "exclude": [
     "**/*.spec.ts",
     "node_modules",

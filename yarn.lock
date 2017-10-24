@@ -118,6 +118,10 @@
     webpack "^3.5.5"
     webpack-manifest-plugin "^1.3.1"
 
+"@types/hammerjs@^2.0.35":
+  version "2.0.35"
+  resolved "https://registry.yarnpkg.com/@types/hammerjs/-/hammerjs-2.0.35.tgz#7b7c950c7d54593e23bffc8d2b4feba9866a7277"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -2286,6 +2290,10 @@ gonzales-pe@^4.0.3:
 graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"
@@ -4980,12 +4988,6 @@ sshpk@^1.7.0:
     ecc-jsbn "~0.1.1"
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
-
-stats-webpack-plugin@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/stats-webpack-plugin/-/stats-webpack-plugin-0.6.1.tgz#5db260514387bc3d4ba6fb85fc4990bd4a71c415"
-  dependencies:
-    lodash "^4.17.4"
 
 "statuses@>= 1.3.1 < 2", statuses@~1.3.1:
   version "1.3.1"

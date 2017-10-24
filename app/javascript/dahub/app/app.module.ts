@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import {

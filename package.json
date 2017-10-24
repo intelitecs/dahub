@@ -21,7 +21,8 @@
     "core-js": "^2.5.1",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
-
+    "html-loader": "^0.5.1",
+    "jquery": "^3.2.1",
     "request": "^2.79.0",
     "rxjs": "^5.5.0",
     "style-loader": "^0.19.0",

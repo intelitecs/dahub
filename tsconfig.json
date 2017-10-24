@@ -15,5 +15,9 @@
     "vendor",
     "public"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "typeRoots":[
+    "node_modules/@angular",
+    "node_modules/@rails"
+  ]
 }

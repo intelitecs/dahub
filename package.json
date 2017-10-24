@@ -21,11 +21,9 @@
     "core-js": "^2.5.1",
     "css-loader": "^0.28.7",
     "file-loader": "^1.1.5",
-    "html-loader": "^0.5.1",
-    "jquery": "^3.2.1",
+
     "request": "^2.79.0",
     "rxjs": "^5.5.0",
-    "stats-webpack-plugin": "^0.6.1",
     "style-loader": "^0.19.0",
     "ts-loader": "^3.0.3",
     "typescript": "^2.5.3",

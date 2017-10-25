@@ -7,7 +7,7 @@ import {
     MatButtonModule, MatGridListModule, MatIconModule, MatListModule, MatMenuModule, MatSidenavModule,
     MatToolbarModule
 } from "@angular/material";
-import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
   ],
   imports: [
     BrowserModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule,
-    BrowserAnimationsModule, NoopAnimationsModule, MatToolbarModule, MatMenuModule
+    BrowserAnimationsModule, MatToolbarModule, MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

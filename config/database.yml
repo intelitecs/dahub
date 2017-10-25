@@ -81,10 +81,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+#production:
+#  <<: *default
+#  database: dahub_production
+#  username: postgres
+#  #password: postgres
+#  #username: dahub
+#  password: <%= ENV['DAHUB_DATABASE_PASSWORD'] %>
+
+
 production:
-  <<: *default
-  database: dahub_production
-  username: postgres
-  #password: postgres
-  #username: dahub
-  password: <%= ENV['DAHUB_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

@@ -6,3 +6,5 @@ webpacker: ./bin/webpack-dev-server
 
 # watcher
 ./bin/webpack --colors --progress
+
+foreman start

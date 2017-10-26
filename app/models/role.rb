@@ -1,5 +1,5 @@
 class Role < ApplicationRecord
   has_many :user_roles
   has_many :users, through: :user_roles
-  validates_presence_of :name
+  validates :name, presence: true, length: {maximum: 20}
 end

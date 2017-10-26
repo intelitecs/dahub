@@ -5,6 +5,7 @@ default: &default
   source_entry_path: packs
   public_output_path: packs
   cache_path: tmp/cache/webpacker
+  hot: true
 
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
@@ -17,6 +18,7 @@ default: &default
     - .coffee
     - .erb
     - .js
+    - .json
     - .jsx
     - .ts
     - .vue
@@ -45,6 +47,8 @@ development:
     overlay: true
     disable_host_check: true
     use_local_ip: false
+    lazy: false
+    open: true
 
 test:
   <<: *default

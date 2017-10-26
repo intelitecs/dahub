@@ -22,5 +22,7 @@
 .byebug_history
 /public/packs
 /public/packs-test
-/node_modules
+
+
+problems_and_solutions_report.txt
 

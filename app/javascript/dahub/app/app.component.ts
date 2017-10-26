@@ -1,80 +1,81 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-
 @Component({
   selector: 'app-root',
   template: `
-    
-    <mat-sidenav-container>
-        
-       <mat-toolbar color="primary">
-            <button mat-icon-button (click)="sidenav.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <button mat-button  style="width: 200px;">DAHUB ADMIN</button>
-            <button mat-button  style="width: 100px;">Login</button>
-            <button mat-button  style="width: 100px;">Register</button>
-            <button mat-icon-button>
-                <mat-icon>contacts</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>help</mat-icon>
-            </button>
-            
-            <span class="app-toolbar-filler"></span>
-            
-            <mat-toolbar-row>
-                <span>Gestion Administrative</span>
-                <mat-icon class="app-top-icon">verified_user</mat-icon>
-            </mat-toolbar-row>
-  
-  
- 
-        </mat-toolbar>
-        
-        <!-- END -->
-    
-        <mat-sidenav #sidenav mode="side" opened="true">
-            <mat-nav-list>
-                <mat-list-item>
-                    <h1 matLine >Dashboard</h1>
-                    <button mat-icon-button>
-                        <mat-icon>home</mat-icon>
-                    </button>    
-                </mat-list-item>
-                
-                <mat-divider></mat-divider>
-                
-                <mat-list-item>
-                    <h1 matLine >CNPS</h1>
-                    <button mat-icon-button>
-                        <mat-icon>attachment</mat-icon>
-                    </button>    
-                </mat-list-item>
-                
-                <mat-divider></mat-divider>
-                
-                <mat-list-item>
-                    <h1 matLine >DACLOUD</h1>
-                    <button mat-icon-button>
-                        <mat-icon>cloud</mat-icon>
-                    </button>    
-                </mat-list-item>
-                
-            </mat-nav-list>
-        </mat-sidenav>
-        <h1>Bienvenu sur la plateforme {{name}}</h1>
-       
-        <h2 class="alert-success">Gérez vos administrations avec aisance</h2>
-    </mat-sidenav-container>
-    
-    
-    
-`,
+
+      <mat-sidenav-container>
+
+          <mat-toolbar color="primary">
+              <button mat-icon-button (click)="sidenav.toggle()">
+                  <mat-icon>menu</mat-icon>
+              </button>
+              <button mat-button  style="width: 200px;">DAHUB ADMIN</button>
+              <button mat-button  style="width: 100px;">Login</button>
+              <button mat-button  style="width: 100px;">Register</button>
+              <button mat-icon-button>
+                  <mat-icon>contacts</mat-icon>
+              </button>
+              <button mat-icon-button>
+                  <mat-icon>help</mat-icon>
+              </button>
+
+              <span class="app-toolbar-filler"></span>
+
+              <mat-toolbar-row>
+                  <span>Gestion Administrative</span>
+                  <mat-icon class="app-top-icon">verified_user</mat-icon>
+              </mat-toolbar-row>
+
+
+
+          </mat-toolbar>
+
+          <!-- END -->
+
+          <mat-sidenav #sidenav mode="side" opened="true">
+              <mat-nav-list>
+                  <mat-list-item>
+                      <h1 matLine >Dashboard</h1>
+                      <button mat-icon-button>
+                          <mat-icon>home</mat-icon>
+                      </button>
+                  </mat-list-item>
+
+                  <mat-divider></mat-divider>
+
+                  <mat-list-item>
+                      <h1 matLine >CNPS</h1>
+                      <button mat-icon-button>
+                          <mat-icon>attachment</mat-icon>
+                      </button>
+                  </mat-list-item>
+
+                  <mat-divider></mat-divider>
+
+                  <mat-list-item>
+                      <h1 matLine >DACLOUD</h1>
+                      <button mat-icon-button>
+                          <mat-icon>cloud</mat-icon>
+                      </button>
+                  </mat-list-item>
+
+              </mat-nav-list>
+          </mat-sidenav>
+          <h1>Bienvenu sur la plateforme {{name}}</h1>
+
+          <h2 class="alert-success">Gérez vos administrations avec aisance</h2>
+      </mat-sidenav-container>
+
+
+
+
+  `,
   styles: ['h1 {color: blue;}']
   //styleUrls:['app.component.css']
 })
 export class AppComponent {
   name = 'Dahub Admin';
+
 
     @Output()
     sidenav = new EventEmitter<boolean>();

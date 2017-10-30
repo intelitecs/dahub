@@ -1,15 +1,3 @@
-const environment = require('./environment');
-const webpack = require('webpack');
+const environment = require('./environment')
 
-
-module.exports = {
-    devServer: {
-    },
-    devtool: 'source-map',
-    entry: {
-        //"ym.min": "./src/bootstrap.ts",
-    },
-    output: { filename: '[name]-[chunkhash].js' },
-
-};
-
+module.exports = environment.toWebpackConfig()

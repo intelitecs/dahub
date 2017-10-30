@@ -26,3 +26,6 @@
 
 problems_and_solutions_report.txt
 
+/public/packs
+/public/packs-test
+/node_modules

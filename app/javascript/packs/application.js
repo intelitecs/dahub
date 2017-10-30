@@ -7,11 +7,4 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-require('../../../node_modules/jquery/dist/jquery');
-require('../../../node_modules/bootstrap/dist/css/bootstrap.css');
-require('../../../node_modules/bootstrap/dist/css/bootstrap-theme.css');
-require('../../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css');
-
-console.log('Hello World from Webpacker');
-console.log("From app/javascript/packs/application.js");
-
+console.log('Hello World from Webpacker')

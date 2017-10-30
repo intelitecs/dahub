@@ -24,10 +24,7 @@ module.exports = {
                 ]
             }
         ],*/
-        output: {
-            filename: '[name].js',
-            path: './dist'
-        },
+        output: { filename: '[name]-[chunkhash].js' },
         plugins: [],
         /*resolve: {
             modules: [

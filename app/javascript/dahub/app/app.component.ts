@@ -61,7 +61,10 @@ import {Component, EventEmitter, Output} from '@angular/core';
 
               </mat-nav-list>
           </mat-sidenav>
-          <h1>Bienvenu sur la plateforme {{name}}</h1>
+          <h1>Bienvenu sur le server {{name}}</h1>
+          <p>
+              Visitez <a href="https://dahub-client.herokuapp.com">Dahub Client</a> pour voir le client.
+          </p>
 
           <h2 class="alert-success">Gérez vos administrations avec aisance</h2>
       </mat-sidenav-container>

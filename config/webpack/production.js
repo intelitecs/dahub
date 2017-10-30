@@ -9,7 +9,7 @@ module.exports = {
     entry: {
         //"ym.min": "./src/bootstrap.ts",
     },
-    output: { filename: 'bundle.js' },
+    output: { filename: '[name]-[chunkhash].js' },
 
 };
 

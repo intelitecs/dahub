@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Dahub Server</title>
+    <title>Dahub Admin - <%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -20,6 +20,7 @@
     <div class="container">
       <%= yield %>
     </div>
+  <%= render 'layouts/footer' %>
 
   </body>
 </html>

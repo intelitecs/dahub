@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-  has_many :user_profiles
-  has_many :users, through: :user_profiles
+  has_many :profile_roles
+  has_many :roles, through: :profile_roles
   validates_presence_of :name
 end

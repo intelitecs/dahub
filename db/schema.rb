@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030120059) do
+ActiveRecord::Schema.define(version: 20171031102417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -315,6 +315,15 @@ ActiveRecord::Schema.define(version: 20171030120059) do
     t.index ["employee_id"], name: "index_observations_on_employee_id"
   end
 
+  create_table "profile_roles", force: :cascade do |t|
+    t.bigint "profile_id"
+    t.bigint "role_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_profile_roles_on_profile_id"
+    t.index ["role_id"], name: "index_profile_roles_on_role_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "name", limit: 20
     t.datetime "created_at", null: false
@@ -345,15 +354,6 @@ ActiveRecord::Schema.define(version: 20171030120059) do
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
-  create_table "user_roles", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "role_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_user_roles_on_role_id"
-    t.index ["user_id"], name: "index_user_roles_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username", limit: 20
     t.string "email", limit: 20
@@ -365,10 +365,8 @@ ActiveRecord::Schema.define(version: 20171030120059) do
     t.boolean "enabled", default: true
     t.string "passwd_reset_token"
     t.datetime "passwd_reset_token_sent_at"
-    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
@@ -403,10 +401,9 @@ ActiveRecord::Schema.define(version: 20171030120059) do
   add_foreign_key "managers", "addresses"
   add_foreign_key "managers", "companies"
   add_foreign_key "observations", "employees"
+  add_foreign_key "profile_roles", "profiles"
+  add_foreign_key "profile_roles", "roles"
   add_foreign_key "qualifications", "employees"
   add_foreign_key "user_profiles", "profiles"
   add_foreign_key "user_profiles", "users"
-  add_foreign_key "user_roles", "roles"
-  add_foreign_key "user_roles", "users"
-  add_foreign_key "users", "addresses"
 end

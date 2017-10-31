@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   resources :juridic_forms, defaults: {format: :html}
   resources :companies, defaults: {format: :html}
   resources :company_registry_documents, defaults: {format: :html}
-  resources :user_roles, defaults: {format: :html}
   resources :profiles, defaults: {format: :html}
   resources :users, defaults: {format: :html}
   resources :user_profiles, defaults: {format: :html}

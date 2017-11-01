@@ -8,4 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 
 require('../dahub/app/app.component.css');
+require('../../../node_modules/bootstrap/dist/css/bootstrap.css');
 console.log('Hello World from Webpacker');

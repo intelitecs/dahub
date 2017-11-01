@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
+  get '/signup', to: 'users#new'
+
   resources :cotisations, defaults: {format: :html}
   resources :advantages,  defaults: {format: :html}
   resources :contracts, defaults: {format: :html}

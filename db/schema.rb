@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031142609) do
+ActiveRecord::Schema.define(version: 20171101101825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,11 +122,9 @@ ActiveRecord::Schema.define(version: 20171031142609) do
     t.datetime "acte_const_at"
     t.string "num_acte_const", limit: 20
     t.bigint "country_id"
-    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "juridic_form_id"
-    t.index ["address_id"], name: "index_companies_on_address_id"
     t.index ["cc"], name: "index_companies_on_cc", unique: true
     t.index ["cnps"], name: "index_companies_on_cnps", unique: true
     t.index ["company_registry_document_id"], name: "index_companies_on_company_registry_document_id"
@@ -381,7 +379,6 @@ ActiveRecord::Schema.define(version: 20171031142609) do
   add_foreign_key "bank_accounts", "companies"
   add_foreign_key "charges", "companies"
   add_foreign_key "cities", "countries"
-  add_foreign_key "companies", "addresses"
   add_foreign_key "companies", "company_registry_documents"
   add_foreign_key "companies", "countries"
   add_foreign_key "companies", "juridic_forms"

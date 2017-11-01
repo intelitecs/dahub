@@ -3,8 +3,8 @@ class Company < ApplicationRecord
   belongs_to :juridic_form, required: true
   belongs_to :country
   belongs_to :address
-  has_many   :etablissements
-  has_many   :charges
+  #has_many   :etablissements
+  #has_many   :charges
   #has_one    :manager
   has_one    :bank_account
   has_one    :accountant

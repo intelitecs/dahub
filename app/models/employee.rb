@@ -1,6 +1,6 @@
 class Employee < ApplicationRecord
-  #belongs_to :company, required: true
-  #has_many :contracts
+  belongs_to :company, required: true
+  has_many :contracts
   #has_many :family_members
   #has_many :observations
   #has_many :qualifications

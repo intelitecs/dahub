@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101101825) do
+ActiveRecord::Schema.define(version: 20171101111705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -282,13 +282,10 @@ ActiveRecord::Schema.define(version: 20171101101825) do
   end
 
   create_table "juridic_forms", force: :cascade do |t|
-    t.string "name"
-    t.string "40"
+    t.string "name", limit: 40
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["40"], name: "index_juridic_forms_on_40", unique: true
-    t.index ["name"], name: "index_juridic_forms_on_name", unique: true
   end
 
   create_table "managers", force: :cascade do |t|
@@ -381,7 +378,6 @@ ActiveRecord::Schema.define(version: 20171101101825) do
   add_foreign_key "cities", "countries"
   add_foreign_key "companies", "company_registry_documents"
   add_foreign_key "companies", "countries"
-  add_foreign_key "companies", "juridic_forms"
   add_foreign_key "contracts", "companies"
   add_foreign_key "contracts", "employees"
   add_foreign_key "cotisations", "companies"

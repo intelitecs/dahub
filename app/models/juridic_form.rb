@@ -1,5 +1,4 @@
 class JuridicForm < ApplicationRecord
-  #
-  #has_many :companies, required: true
-  validates_presence_of :name, :description
+  has_many :companies
+  validates :name, presence: true, length: {maximum: 40}
 end

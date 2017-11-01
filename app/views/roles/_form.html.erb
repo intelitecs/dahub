@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :role_name %>
+  <div class="form-group">
+    <%= form.label "Nom du Rôle", class: "control-label", for: :role_name %>
+    <%= form.text_field :name, id: :role_name, class: "form-control", placeholder: "Désignation du Rôle" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enregistrer", class: "btn btn-primary" %>
   </div>
 <% end %>

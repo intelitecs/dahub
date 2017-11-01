@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031102417) do
+ActiveRecord::Schema.define(version: 20171031142609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,12 +18,10 @@ ActiveRecord::Schema.define(version: 20171031102417) do
   create_table "accountants", force: :cascade do |t|
     t.string "lastname"
     t.string "firstname"
-    t.bigint "address_id"
     t.bigint "company_id"
     t.boolean "employed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_accountants_on_address_id"
     t.index ["company_id"], name: "index_accountants_on_company_id"
   end
 
@@ -56,6 +54,8 @@ ActiveRecord::Schema.define(version: 20171031102417) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "accountant_id"
+    t.index ["accountant_id"], name: "index_addresses_on_accountant_id"
     t.index ["city_id"], name: "index_addresses_on_city_id"
     t.index ["country_id"], name: "index_addresses_on_country_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -328,6 +328,7 @@ ActiveRecord::Schema.define(version: 20171031102417) do
     t.string "name", limit: 20
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_profiles_on_name", unique: true
   end
 
   create_table "qualifications", force: :cascade do |t|
@@ -343,6 +344,7 @@ ActiveRecord::Schema.define(version: 20171031102417) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_roles_on_name", unique: true
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -370,8 +372,8 @@ ActiveRecord::Schema.define(version: 20171031102417) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "accountants", "addresses"
   add_foreign_key "accountants", "companies"
+  add_foreign_key "addresses", "accountants"
   add_foreign_key "addresses", "cities"
   add_foreign_key "addresses", "countries"
   add_foreign_key "addresses", "users"

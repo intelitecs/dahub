@@ -2,7 +2,7 @@ class Company < ApplicationRecord
 
   #belongs_to :company_registry_document, required: true
   #belongs_to :juridic_form, required: true
-  belongs_to :country
+  belongs_to :country, required: false
   #belongs_to :address
   has_many   :etablissements
   has_many   :charges

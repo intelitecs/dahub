@@ -1,4 +1,5 @@
 class Company < ApplicationRecord
+  #good
   belongs_to :company_registry_document, required: true
   belongs_to :juridic_form, required: true
   belongs_to :country

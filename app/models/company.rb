@@ -1,12 +1,12 @@
 class Company < ApplicationRecord
-  #belongs_to :company_registry_document, required: true
+  belongs_to :company_registry_document, required: true
   #belongs_to :juridic_form, required: true
   #belongs_to :country
   #belongs_to :address
   #has_many   :etablissements
-  #has_many   :charges
+  has_many   :charges
   #has_one    :manager
-  #has_one    :bank_account
+  has_one    :bank_account
   has_one    :accountant
   #has_many :contracts
   #has_many :employees, through: :contracts

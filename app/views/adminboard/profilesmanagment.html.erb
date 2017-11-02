@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h1>Gestion des profiles et des privilèges</h1>
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @profiles.each do |profile| %>
+          <tr><td><%= profile.name %></td></tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

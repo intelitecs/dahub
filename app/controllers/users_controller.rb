@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        UserProfile.create!({user: @user, profile: @default_profile})
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -65,6 +66,10 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def set_default_user_profile
+      @default_profile = Profile.find_by_name("user")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

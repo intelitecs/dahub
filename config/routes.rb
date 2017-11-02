@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'adminboard/index'
+  get 'adminboard/profilesmanagment'
 
   get 'static_pages/home'
 
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
 
   get '/signup', to: 'users#new'
+
 
   resources :cotisations, defaults: {format: :html}
   resources :advantages,  defaults: {format: :html}

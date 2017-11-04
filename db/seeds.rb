@@ -8,8 +8,8 @@
 
 #User profiles
 
-#profiles = Profile.create!([{name: "superadmin"},{name: "accountant"},{name: "admin"},{name:"user"},{name: "manager"},{name: "employee"},{name: "company"},{name: "etablissement"}])
+profiles = Profile.create!([{name: "superadmin"},{name: "accountant"},{name: "admin"},{name:"user"},{name: "manager"},{name: "employee"},{name: "company"},{name: "etablissement"}])
 
 superAdminProfile = Profile.find_by_name("superadmin")
-superAdminUser = User.create!({username: "jarode", email: "jarode@me.com", password: "jarode"})
+superAdminUser = User.create!({username: "jarode", email: "jarode@me.com", password: "jarode", password_confirmation: "jarode"})
 UserProfile.create!({user: superAdminUser, profile: superAdminProfile})

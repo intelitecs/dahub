@@ -29,7 +29,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserProfile.create!({user: @user, profile: @default_profile})
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        log_in @user
+        format.html {
+          flash[:success] = "Bienvenu sur Dahub!"
+          redirect_to @user
+        }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -74,6 +78,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password_digest, :confirmation_token, :confirmed_at, :confirmation_sent_at, :last_passwd_reset_at, :enabled, :passwd_reset_token, :passwd_reset_token_sent_at)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :confirmation_token, :confirmed_at, :confirmation_sent_at, :last_passwd_reset_at, :enabled, :passwd_reset_token, :passwd_reset_token_sent_at)
     end
 end

@@ -56,5 +56,5 @@ config.webpacker.check_yarn_integrity = true
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  ENV["DAHUB_DATABASE_PASSWORD"] = "postgres"
+  ENV["DAHUB_DATABASE_PASSWORD"] = "imhotep"
 end

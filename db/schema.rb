@@ -18,10 +18,12 @@ ActiveRecord::Schema.define(version: 20171101111705) do
   create_table "accountants", force: :cascade do |t|
     t.string "lastname"
     t.string "firstname"
+    t.bigint "address_id"
     t.bigint "company_id"
     t.boolean "employed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_accountants_on_address_id"
     t.index ["company_id"], name: "index_accountants_on_company_id"
   end
 
@@ -54,8 +56,6 @@ ActiveRecord::Schema.define(version: 20171101111705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "accountant_id"
-    t.index ["accountant_id"], name: "index_addresses_on_accountant_id"
     t.index ["city_id"], name: "index_addresses_on_city_id"
     t.index ["country_id"], name: "index_addresses_on_country_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
@@ -336,7 +336,7 @@ ActiveRecord::Schema.define(version: 20171101111705) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 20
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_roles_on_name", unique: true
@@ -362,13 +362,15 @@ ActiveRecord::Schema.define(version: 20171101111705) do
     t.boolean "enabled", default: true
     t.string "passwd_reset_token"
     t.datetime "passwd_reset_token_sent_at"
+    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "accountants", "addresses"
   add_foreign_key "accountants", "companies"
-  add_foreign_key "addresses", "accountants"
   add_foreign_key "addresses", "cities"
   add_foreign_key "addresses", "countries"
   add_foreign_key "addresses", "users"
@@ -401,4 +403,5 @@ ActiveRecord::Schema.define(version: 20171101111705) do
   add_foreign_key "qualifications", "employees"
   add_foreign_key "user_profiles", "profiles"
   add_foreign_key "user_profiles", "users"
+  add_foreign_key "users", "addresses"
 end

@@ -11,9 +11,12 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
-  get '/signup', to: 'users#new'
+  get '/signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as:'login'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
-
+  resources :sessions
   resources :cotisations, defaults: {format: :html}
   resources :advantages,  defaults: {format: :html}
   resources :contracts, defaults: {format: :html}

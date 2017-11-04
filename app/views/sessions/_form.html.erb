@@ -7,7 +7,14 @@
       <%= form.label "Mot de passe", for: "session_password", class: 'control-label' %>
       <%= form.password_field :password, class: 'form-control', placeholder: "Mot de passe" %>
   </div>
-  <%= form.submit "Connexion", class: "btn btn-primary" %>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="actions">
+          <%= form.submit "Connexion", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+
 <% end %>
 
 <p>Nouvel utilisateur? <%= link_to 'Inscrivez-vous maintenant!', signup_path %></p>

@@ -14,6 +14,47 @@ body {
   box-sizing: border-box;
 }
 
+@mixin flash-box{
+  width: 400px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 15px;
+  @include box_sizing;
+}
+
+.linkbtn{
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.alert-danger{
+  @include flash-box;
+  background: #ff4a1c;
+  color: #fff;
+}
+
+.flash-box-success{
+  @include flash-box;
+  background: rgba(14,184,42,0.66);
+  color: #fff;
+}
+
+.flash-box-warning{
+  @include flash-box;
+  background: #ff4a1c;
+  color: #fff;
+}
+
+.flash-box-danger{
+  @include flash-box;
+  background: #ff0a1b;
+  color: #fff;
+}
+
+
+
+
 .debug_dump{
   clear: both;
   float: left;

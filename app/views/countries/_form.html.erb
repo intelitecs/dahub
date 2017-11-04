@@ -11,82 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code, id: :country_code %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label "Code Pays", class: "label-control" %>
+        <%= form.text_field :code, id: :country_code, class: "form-control", placeholder: "Code pays" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label "Second code Pays", class: "label-control" %>
+        <%= form.text_field :code2, id: :country_code2, class: "form-control", placeholder: "Code Pays Simplifié" %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :code2 %>
-    <%= form.text_field :code2, id: :country_code2 %>
-  </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label "Nom du Pays", class: "label-control" %>
+          <%= form.text_field :name, id: :country_name, class: "form-control", placeholder: "Nom du pays" %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label "Continent", class: "label-control" %>
+          <%= form.text_field :continent, id: :country_continent, class: "form-control", placeholder: "Continent" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :country_name %>
-  </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="actions">
+          <%= form.submit "Enregistrer", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :continent %>
-    <%= form.text_field :continent, id: :country_continent %>
-  </div>
 
-  <div class="field">
-    <%= form.label :localname %>
-    <%= form.text_field :localname, id: :country_localname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :surfaceArea %>
-    <%= form.text_field :surfaceArea, id: :country_surfaceArea %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lifeExpectancy %>
-    <%= form.text_field :lifeExpectancy, id: :country_lifeExpectancy %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gnp %>
-    <%= form.text_field :gnp, id: :country_gnp %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gnpold %>
-    <%= form.text_field :gnpold, id: :country_gnpold %>
-  </div>
-
-  <div class="field">
-    <%= form.label :population %>
-    <%= form.number_field :population, id: :country_population %>
-  </div>
-
-  <div class="field">
-    <%= form.label :indepYear %>
-    <%= form.number_field :indepYear, id: :country_indepYear %>
-  </div>
-
-  <div class="field">
-    <%= form.label :governmentForm %>
-    <%= form.text_field :governmentForm, id: :country_governmentForm %>
-  </div>
-
-  <div class="field">
-    <%= form.label :headOfState %>
-    <%= form.text_field :headOfState, id: :country_headOfState %>
-  </div>
-
-  <div class="field">
-    <%= form.label :eCapital %>
-    <%= form.text_field :eCapital, id: :country_eCapital %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pCapital %>
-    <%= form.text_field :pCapital, id: :country_pCapital %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

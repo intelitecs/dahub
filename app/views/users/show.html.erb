@@ -1,3 +1,8 @@
 <p>
   Bienvenu <%= current_user.username %>
+
 </p>
+
+<% current_user.profiles.each  do  |profile| %>
+  <h1><%= profile.name %></h1>
+<% end %>

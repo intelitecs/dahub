@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'adminboard/index'
-  get 'adminboard/profilesmanagment'
+  get 'adminboard', to: 'adminboard#index', as: 'adminboard'
+  get 'profilesmanagment', to: 'adminboard#profilesmanagment', as: 'profilesmanagment'
+
 
   get 'static_pages/home'
 

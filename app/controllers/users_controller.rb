@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_default_user_profile, only: [:create]
 
   # GET /users
   # GET /users.json
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
         UserProfile.create!({user: @user, profile: @default_profile})
         log_in @user
         format.html {
-          flash[:success] = "Bienvenu sur Dahub!"
+          flash.now[:success] = "Bienvenu sur Dahub!"
           redirect_to @user
         }
         format.json { render :show, status: :created, location: @user }

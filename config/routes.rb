@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+
   resources :sessions
   resources :cotisations, defaults: {format: :html}
   resources :advantages,  defaults: {format: :html}

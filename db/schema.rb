@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101111705) do
+ActiveRecord::Schema.define(version: 20171104044647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -352,8 +352,8 @@ ActiveRecord::Schema.define(version: 20171101111705) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username", limit: 20
-    t.string "email", limit: 20
+    t.string "username", limit: 40
+    t.string "email", limit: 40
     t.string "password_digest"
     t.string "confirmation_token"
     t.datetime "confirmed_at"

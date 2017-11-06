@@ -5,8 +5,6 @@ class SessionsController < ApplicationController
 
 
   def create
-    #user = User.find_by(email: params[:session][:email].downcase)
-    #user = User.where("email = ? or username = ?",params[:session][:email], params[:session][:email]).first
     user = User.where(email: params[:session][:email]).or(User.where(username: params[:session][:email])).first
     if user
       if user.authenticate(params[:session][:password])

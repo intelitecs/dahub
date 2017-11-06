@@ -18,6 +18,12 @@ class ApplicationController < ActionController::Base
 
   end
 
+  #Returns true if the given user is the current user.
+  def current_user?(user)
+    user == current_user
+  end
+  helper_method :current_user?
+
   helper_method :current_user
 
   def superadmin_or_admin?(user)
@@ -27,6 +33,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :superadmin_or_admin?
+
 
 
   private

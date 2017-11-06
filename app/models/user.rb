@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: 255}, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   validates :username, presence: true, length: {maximum: 20}
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
   #has_secure_token
 
   #Returns the hash digest of the given string.
@@ -41,6 +41,8 @@ class User < ApplicationRecord
   end
 
   private
+
+
 
   def create_activation_digest
     #create token and digest

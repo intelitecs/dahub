@@ -15,10 +15,11 @@ body {
 }
 
 @mixin flash-box{
-  width: 400px;
-  height: 40px;
+  width: 600px;
+  height: 80px;
   font-weight: bold;
   font-size: 15px;
+  line-height: 50px;
   @include box_sizing;
 }
 
@@ -34,7 +35,7 @@ body {
   color: #fff;
 }
 
-.flash-box-success{
+.alert-success{
   @include flash-box;
   background: rgba(14,184,42,0.66);
   color: #fff;
@@ -171,4 +172,14 @@ input, textarea, select, .uneditable-input{
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $light-gray;
+  }
 }

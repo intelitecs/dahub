@@ -5,7 +5,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
       <div class="center jumbotron">
           <h1> {{name | uppercase}} </h1>
           <h2>
-              Visitez <a class="alert-success" href="https://dahub-client.herokuapp.com">Dahub Client</a> pour voir le client.
+              Visitez <a href="https://dahub-client.herokuapp.com">Dahub Client</a> pour voir le client.
           </h2>
       </div>
       

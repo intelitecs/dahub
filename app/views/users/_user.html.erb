@@ -1,0 +1,9 @@
+<li>
+  <%= user.username %>
+  <%= user.email %>
+  <% if superadmin_or_admin?(current_user) && !current_user?(user) %>
+     | <%= link_to "Gestion des privilèges", "#" %>
+     | <%= link_to "supprimer", user, method: :delete, data: {confirm: "êtes-vous sûre de supprimer cet utilisateur"} %>
+
+  <% end %>
+</li>

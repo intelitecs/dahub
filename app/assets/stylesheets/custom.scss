@@ -41,6 +41,17 @@ body {
   color: #fff;
 }
 
+.alert-warning{
+  @include flash-box;
+  background: rgba(255,74,28,0.66);
+  color: #fff;
+}
+
+.alert-info{
+  @include flash-box;
+  background: rgba(10,11,127,0.66);
+}
+
 .flash-box-warning{
   @include flash-box;
   background: #ff4a1c;

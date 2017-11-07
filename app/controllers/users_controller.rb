@@ -36,10 +36,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserProfile.create!({user: @user, profile: @default_profile})
+        #UserMailer.account_activation(@user).deliver_now
         log_in @user
         format.html {
-          flash.now[:success] = "Bienvenu sur Dahub!"
-          redirect_to @user
+          flash.now[:info] = "Bien venu sur Dahub!"
+          redirect_to root_url
         }
         format.json { render :show, status: :created, location: @user }
       else
@@ -77,6 +78,20 @@ class UsersController < ApplicationController
         redirect_to users_url
       }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm_email
+    user = User.find_by(email: params[:email])
+    if user && !user.activated? && user.authenticated?(:activation, params[:id])
+      user.update_attribute(:activated, true)
+      user.update_attribute(:activated_at, Time.zone.now)
+      log_in user
+      flash[:success] = "Merci, votre compte est à présent activé"
+      redirect_to user
+    else
+      flash[:danger] = "Lien d'activation invalide"
+      redirect_to root_url
     end
   end
 

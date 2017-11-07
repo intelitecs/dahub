@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+
   resources :account_activations, only: [:edit]
 
   resources :sessions
@@ -40,7 +41,11 @@ Rails.application.routes.draw do
   resources :companies, defaults: {format: :html}
   resources :company_registry_documents, defaults: {format: :html}
   resources :profiles, defaults: {format: :html}
-  resources :users, defaults: {format: :html}
+  resources :users, defaults: {format: :html} do
+      member do
+        get :confirm_email
+      end
+  end
   resources :user_profiles, defaults: {format: :html}
   resources :addresses, defaults: {format: :html}
   resources :cities, defaults: {format: :html}

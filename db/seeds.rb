@@ -6,7 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# create countries
+country1 = {code: "CIV", code2: "CI", continent: "Afrique",localname: "Côte d'ivoire", name: "Côte d'ivoire", governmentForm: "République", lifeExpectancy: 67.5, indepYear: 1960}
+country2 = {code: "MAL", code2: "ML", continent: "Afrique",localname: "Mali", name: "Mali", governmentForm: "République", lifeExpectancy: 60.5, indepYear: 1960}
+countries = Country.create!([country1, country2])
+
+
+
 #User profiles
+
 
 profiles = Profile.create!([{name: "superadmin"},{name: "accountant"},{name: "admin"},{name:"user"},{name: "manager"},{name: "employee"},{name: "company"},{name: "etablissement"}])
 

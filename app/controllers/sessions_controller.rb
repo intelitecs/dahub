@@ -6,24 +6,44 @@ class SessionsController < ApplicationController
 
   def create
     user = User.where(email: params[:session][:email].downcase).or(User.where(username: params[:session][:email].downcase)).first
-    if user
-      if user.authenticate(params[:session][:password])
-        log_in user
-        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        if superadmin_or_admin? user
-          redirect_back_or adminboard_path
+    respond_to do |format|
+      if user
+
+        if user.authenticate(params[:session][:password])
+          format.html {
+            log_in user
+            params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+            if superadmin_or_admin? user
+              redirect_back_or adminboard_path
+            else
+              redirect_back_or user
+            end
+          }
+          format.json {
+            auth_token = JsonWebToken.encode({user_id: user.id})
+            render json: {auth_token: auth_token, username: user.username, user_id: user.id}, status: :ok
+          }
         else
-          redirect_back_or user
+          # create and error message
+          format.html {
+            flash.now[:danger] ="Mot de passe incorrect pour cet utilisateur"
+            render 'new'
+          }
+          format.json{
+            render json: {error: "Mot de passe incorrect"}, status: :unauthorized
+          }
         end
       else
-        # create and error message
-        flash.now[:danger] ="Mot de passe incorrect pour cet utilisateur"
-        render 'new'
+        format.html{
+          flash.now[:danger] ="Cet utilisateur n'existe pas!"
+          render 'new'
+        }
+        format.json{
+          render json: {error: "Cet utilisateur n'existe pas!"}, status: :unauthorized
+        }
       end
-    else
-      flash.now[:danger] ="Cet utilisateur n'existe pas!"
-      render 'new'
     end
+
   end
 
   def destroy

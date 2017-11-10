@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :juridic_form_name %>
+  <div class="form-group">
+    <%= form.label  "Nom de la forme", class: "control-label" %>
+    <%= form.text_field :name, id: :juridic_form_name, class:"form-control", placeholder: "Nom de la forme juridique" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :juridic_form_description %>
+  <div class="form-group">
+    <%= form.label "Description de la forme juridique" %>
+    <%= form.text_area :description, id: :juridic_form_description , rows: '7', colos: "10", placeholder: "Description de la forme juridique"%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enregistrer", class: "btn btn-primary" %>
   </div>
 <% end %>

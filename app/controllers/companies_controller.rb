@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
+  before_action :create_user, only: [:create]
+
 
   # GET /companies
   # GET /companies.json
@@ -69,6 +71,14 @@ class CompaniesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
-      params.require(:company).permit(:cc, :cnps, :company_registry_document_id, :name, :socialReason, :form, :sigle, :webSite, :impotCenter, :impotRegime, :acte_const_at, :num_acte_const, :country_id)
+      params.require(:company).permit(:cc, :cnps, :company_registry_document_id, :name, :socialReason, :juridic_form_id, :sigle, :webSite, :impotCenter, :impotRegime, :acte_const_at, :num_acte_const, :country_id, :password, :password_confirmation)
     end
+
+  def create_user
+    companyProfile = Profile.find_by(name: "company")
+    userProfile = Profile.find_by(name: "user")
+    user = User.create!({username: params[:socialReason], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation]})
+    UserProfile.create!({user: user, profile: userProfile})
+    UserProfile.create!({user: user, profile: companyProfile})
+  end
 end

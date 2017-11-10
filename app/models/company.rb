@@ -1,6 +1,6 @@
 class Company < ApplicationRecord
   before_save {self.email = email.downcase}
-  after_save :create_user
+  #after_save :create_user
   has_many :employees
   belongs_to :company_registry_document, required: false
   belongs_to :juridic_form, required: true
@@ -11,7 +11,7 @@ class Company < ApplicationRecord
   has_one    :accountant
   has_many :contracts
   has_many :cotisations
-  validates_presence_of :name, :cnps, :cc, :acte_const_at, :juridic_form, :impotRegime, :impotCenter, :socialReason, :num_acte_const
+  #validates_presence_of :name, :cnps, :cc, :acte_const_at, :juridic_form, :impotRegime, :impotCenter, :socialReason, :num_acte_const
 
 
   private

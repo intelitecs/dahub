@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110041628) do
+ActiveRecord::Schema.define(version: 20171110200039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20171110041628) do
     t.string "cnps", limit: 20
     t.bigint "company_registry_document_id"
     t.string "name", limit: 20
-    t.string "socialReason", limit: 20
+    t.string "socialReason", limit: 60
     t.string "sigle", limit: 6
     t.string "webSite", limit: 16
     t.string "impotCenter", limit: 20
@@ -125,7 +125,7 @@ ActiveRecord::Schema.define(version: 20171110041628) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "juridic_form_id"
-    t.string "email", limit: 20
+    t.string "email", limit: 40
     t.index ["cc"], name: "index_companies_on_cc", unique: true
     t.index ["cnps"], name: "index_companies_on_cnps", unique: true
     t.index ["company_registry_document_id"], name: "index_companies_on_company_registry_document_id"

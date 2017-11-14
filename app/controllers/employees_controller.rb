@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
-  after_action :createUser, only: [:create]
+  before_action :create_user, only: [:create]
 
   # GET /employees
   # GET /employees.json
@@ -70,10 +70,15 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:matricule, :cnps, :expat, :lastname, :firstname, :birthdate, :sex, :nationality, :hireAt, :company_id, :matrimonial_situation)
+      params.require(:employee).permit(:matricule, :cnps, :expat, :lastname, :firstname, :birthdate, :birthplace, :sex, :nationality, :hireAt, :company_id, :matrimonial_situation)
     end
 
-  def createUser
+  def create_user
+    employeeProfile = Profile.find_by(name: "employee")
+    userProfile = Profile.find_by(name: "user")
+    user = User.create!({username: params[:email], email: params[:email], password: params[:lastname], password_confirmation: params[:lastname]})
+    UserProfile.create!({user: user, profile: userProfile})
+    UserProfile.create!({user: user, profile: employeeProfile})
 
   end
 end

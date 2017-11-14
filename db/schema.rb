@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110200039) do
+ActiveRecord::Schema.define(version: 20171113151643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -210,10 +210,12 @@ ActiveRecord::Schema.define(version: 20171110200039) do
     t.datetime "hireAt"
     t.bigint "company_id"
     t.string "matrimonial_situation", limit: 20
-    t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_employees_on_address_id"
+    t.string "birthplace"
+    t.string "email", limit: 40
+    t.string "phone", limit: 20
+    t.string "mobilePhone", limit: 20
     t.index ["cnps"], name: "index_employees_on_cnps", unique: true
     t.index ["company_id"], name: "index_employees_on_company_id"
     t.index ["matricule"], name: "index_employees_on_matricule", unique: true
@@ -389,7 +391,6 @@ ActiveRecord::Schema.define(version: 20171110200039) do
   add_foreign_key "contracts", "employees"
   add_foreign_key "cotisations", "companies"
   add_foreign_key "cotisations", "employees"
-  add_foreign_key "employees", "addresses"
   add_foreign_key "employees", "companies"
   add_foreign_key "etablissement_activities", "activities"
   add_foreign_key "etablissement_activities", "etablissements"

@@ -7,5 +7,5 @@ class Employee < ApplicationRecord
   has_many :handicaps
   has_many :advantages
   has_many :cotisations
-  validates_presence_of :lastname, :firstname, :birthdate, :matricule, :nationality, :matrimonial_situation, :hireAt
+  validates_presence_of :lastname, :firstname, :birthdate, :birthplace, :matricule, :hireAt
 end
